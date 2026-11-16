@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS math_whiz_db;
+USE math_whiz_db;
+
+CREATE TABLE IF NOT EXISTS game_scores (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    player_name VARCHAR(100) NOT NULL,
+    score INT NOT NULL,
+    difficulty VARCHAR(20) NOT NULL,
+    played_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Check saved scores:
+SELECT * FROM game_scores ORDER BY score DESC, played_at ASC LIMIT 10;
